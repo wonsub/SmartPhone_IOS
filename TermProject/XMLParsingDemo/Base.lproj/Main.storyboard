@@ -6,13 +6,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Apple 피드 데이터-->
+        <!--공항코드-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Apple 피드 데이터" id="BYZ-38-t0r" customClass="ViewController_Airport" customModule="XMLParsingDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="공항코드" id="BYZ-38-t0r" customClass="ViewController_Airport" customModule="XMLParsingDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -21,27 +22,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uGX-cM-TEz">
-                                <rect key="frame" x="16" y="20" width="1008" height="1346"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uGX-cM-TEz">
+                                <rect key="frame" x="0.0" y="102" width="1024" height="1264"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="LqD-P1-s6Y" detailTextLabel="YhT-vG-zvf" style="IBUITableViewCellStyleSubtitle" id="QIz-VG-gna">
-                                        <rect key="frame" x="0.0" y="28" width="1008" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="1024" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QIz-VG-gna" id="T6r-qh-jpi">
-                                            <rect key="frame" x="0.0" y="0.0" width="1008" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LqD-P1-s6Y">
-                                                    <rect key="frame" x="168" y="5" width="33.5" height="20.5"/>
+                                                    <rect key="frame" x="176" y="5" width="33.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YhT-vG-zvf">
-                                                    <rect key="frame" x="168" y="25.5" width="44" height="14.5"/>
+                                                    <rect key="frame" x="176" y="25.5" width="44" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -56,10 +56,66 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="NlS-NQ-jW9"/>
                                 </connections>
                             </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nq7-Cw-db5">
+                                <rect key="frame" x="982" y="114" width="32" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mOw-Zr-ZIG">
+                                <rect key="frame" x="0.0" y="64" width="30" height="30"/>
+                                <state key="normal" title="&lt;"/>
+                                <connections>
+                                    <action selector="pressPrevBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1h7-ca-1yr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYU-bO-bKQ">
+                                <rect key="frame" x="26" y="64" width="30" height="30"/>
+                                <state key="normal" title="&gt;"/>
+                                <connections>
+                                    <action selector="pressNextBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EoT-wG-OKA"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J1h-VF-YMI">
+                                <rect key="frame" x="388" y="65" width="249" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="249" id="DIl-UY-iSi"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CND-5t-E5x">
+                                <rect key="frame" x="645" y="64" width="62" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="62" id="2bL-k6-Usj"/>
+                                </constraints>
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="Search:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Ok-Ew-euU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="CND-5t-E5x" firstAttribute="leading" secondItem="J1h-VF-YMI" secondAttribute="trailing" constant="8" symbolic="YES" id="4V1-lR-9BT"/>
+                            <constraint firstItem="mOw-Zr-ZIG" firstAttribute="baseline" secondItem="SYU-bO-bKQ" secondAttribute="baseline" id="BdU-u2-nYX"/>
+                            <constraint firstItem="mOw-Zr-ZIG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Me9-xX-Lfm"/>
+                            <constraint firstItem="SYU-bO-bKQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="6" id="P0Q-3O-nWc"/>
+                            <constraint firstItem="J1h-VF-YMI" firstAttribute="centerX" secondItem="uGX-cM-TEz" secondAttribute="centerX" id="Yen-Hm-PM2"/>
+                            <constraint firstItem="SYU-bO-bKQ" firstAttribute="baseline" secondItem="J1h-VF-YMI" secondAttribute="baseline" id="eBS-vO-MDO"/>
+                            <constraint firstItem="uGX-cM-TEz" firstAttribute="top" secondItem="mOw-Zr-ZIG" secondAttribute="bottom" constant="8" symbolic="YES" id="p3D-D3-eDQ"/>
+                            <constraint firstAttribute="bottom" secondItem="uGX-cM-TEz" secondAttribute="bottom" id="qWq-tR-7pI"/>
+                            <constraint firstItem="CND-5t-E5x" firstAttribute="baseline" secondItem="J1h-VF-YMI" secondAttribute="baseline" id="rWr-D8-tap"/>
+                            <constraint firstItem="mOw-Zr-ZIG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="sUM-Va-UvS"/>
+                            <constraint firstAttribute="trailing" secondItem="uGX-cM-TEz" secondAttribute="trailing" id="stV-C8-2LZ"/>
+                            <constraint firstItem="mOw-Zr-ZIG" firstAttribute="leading" secondItem="uGX-cM-TEz" secondAttribute="leading" id="wWK-SE-lOL"/>
+                        </constraints>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="SearchContent" destination="J1h-VF-YMI" id="7Wk-Zj-xgD"/>
+                        <outlet property="nextButton" destination="SYU-bO-bKQ" id="iDR-RS-qcn"/>
+                        <outlet property="prevButton" destination="mOw-Zr-ZIG" id="Z0j-Th-pvu"/>
                         <outlet property="tbData" destination="uGX-cM-TEz" id="AxV-Pe-bAH"/>
                     </connections>
                 </viewController>
@@ -172,10 +228,10 @@
             </objects>
             <point key="canvasLocation" x="242.40000000000001" y="122.78860569715144"/>
         </scene>
-        <!--국제선정보-->
+        <!--국내선정보-->
         <scene sceneID="0Hq-uN-UoI">
             <objects>
-                <viewController title="국제선정보" id="Ms1-66-FaB" customClass="ViewController_DomesticAirPlane" customModule="XMLParsingDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="국내선정보" id="Ms1-66-FaB" customClass="ViewController_DomesticAirPlane" customModule="XMLParsingDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IXX-i7-lZF"/>
                         <viewControllerLayoutGuide type="bottom" id="Wdt-DH-wne"/>
@@ -248,10 +304,10 @@
             </objects>
             <point key="canvasLocation" x="-425" y="123"/>
         </scene>
-        <!--실시간현황-->
+        <!--국제선정보-->
         <scene sceneID="0x1-EF-5Ta">
             <objects>
-                <viewController title="실시간현황" id="dlF-QB-skJ" customClass="ViewController_InternationalAirPlane" customModule="XMLParsingDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="국제선정보" id="dlF-QB-skJ" customClass="ViewController_InternationalAirPlane" customModule="XMLParsingDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hxj-bY-SUx"/>
                         <viewControllerLayoutGuide type="bottom" id="Zli-Cq-0e0"/>
@@ -306,10 +362,10 @@
             </objects>
             <point key="canvasLocation" x="241.99218749999997" y="800.73206442166907"/>
         </scene>
-        <!--국내선정보-->
+        <!--실시간현황-->
         <scene sceneID="UfM-Ij-TIa">
             <objects>
-                <viewController title="국내선정보" id="hML-3Z-kJt" customClass="ViewController_FlightStatus" customModule="XMLParsingDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="실시간현황" id="hML-3Z-kJt" customClass="ViewController_FlightStatus" customModule="XMLParsingDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="x52-dS-DXz"/>
                         <viewControllerLayoutGuide type="bottom" id="aVl-vp-qMS"/>

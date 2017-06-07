@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController_Airport: UIViewController, XMLParserDelegate {
     
-    
+    var pageNo = 1
     var parser = XMLParser()
     var posts = NSMutableArray()
     var elements = NSMutableDictionary()
@@ -18,7 +18,7 @@ class ViewController_Airport: UIViewController, XMLParserDelegate {
     
     var cityCode = NSMutableString()
     var cityEnglish = NSMutableString()
-    var cityJapan = NSMutableString()
+    //var cityJapan = NSMutableString()
     var cityKorean = NSMutableString()
     
     
@@ -28,18 +28,54 @@ class ViewController_Airport: UIViewController, XMLParserDelegate {
     
 
     
+    @IBOutlet weak var prevButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var tbData: UITableView!
-
+    @IBOutlet weak var SearchContent: UITextField!
+    
+    @IBAction func Search(_ sender: Any) {
+        beginParsing()
+    }
+    @IBAction func pressPrevBtn(_ sender: Any) {
+        pageNo -= 1
+        pageManage()
+        
+    }
+    @IBAction func pressNextBtn(_ sender: Any) {
+        pageNo += 1
+        pageManage()
+    }
+    
+    
+    func pageManage(){
+        
+        if(pageNo == 1){
+            prevButton.isEnabled = false
+            nextButton.isEnabled = true
+        }
+        else{
+            prevButton.isEnabled = true
+        }
+        beginParsing()
+   
+    }
     
     func beginParsing(){
+        
         posts = []
         
+        url = "http://openapi.airport.co.kr/service/rest/AirportCodeList/getAirportCodeList?ServiceKey=Ky%2BwXkscu67T8fzT8JNNCSHphmixtovXBdUJq7mu6UpqCcZf7HLqA%2F8bjU%2FHijQ4Vi4zmtjF9Kp3LtjgUgHvTg%3D%3D&numOfRows=10&pageNo=" + String(pageNo)
         
-        parser = XMLParser(contentsOf:(NSURL(string:"http://openapi.airport.co.kr/service/rest/AirportCodeList/getAirportCodeList?ServiceKey=Ky%2BwXkscu67T8fzT8JNNCSHphmixtovXBdUJq7mu6UpqCcZf7HLqA%2F8bjU%2FHijQ4Vi4zmtjF9Kp3LtjgUgHvTg%3D%3D&numOfRows=10"))! as URL)!
+        if(SearchContent.text != ""){
+            url = "http://openapi.airport.co.kr/service/rest/AirportCodeList/getAirportCodeList?ServiceKey=Ky%2BwXkscu67T8fzT8JNNCSHphmixtovXBdUJq7mu6UpqCcZf7HLqA%2F8bjU%2FHijQ4Vi4zmtjF9Kp3LtjgUgHvTg%3D%3D&numOfRows=1000"
+        }
         
+        
+        parser = XMLParser(contentsOf:(NSURL(string:url))! as URL)!
+       
         /*
-        parser = XMLParser(contentsOf:(NSURL(string:"http://open.kmrb.or.kr/openapi-data/service/MvResultService/mvResult?ServiceKey=Ky%2BwXkscu67T8fzT8JNNCSHphmixtovXBdUJq7mu6UpqCcZf7HLqA%2F8bjU%2FHijQ4Vi4zmtjF9Kp3LtjgUgHvTg%3D%3D&pageNo=1&numOfRows=10"))! as URL)!
-*/
+        http://openapi.airport.co.kr/service/rest/AirportCodeList/getAirportCodeList?ServiceKey=Ky%2BwXkscu67T8fzT8JNNCSHphmixtovXBdUJq7mu6UpqCcZf7HLqA%2F8bjU%2FHijQ4Vi4zmtjF9Kp3LtjgUgHvTg%3D%3D&numOfRows=10&pageNo=
+         */
         
         
         parser.delegate = self as! XMLParserDelegate
@@ -56,8 +92,9 @@ class ViewController_Airport: UIViewController, XMLParserDelegate {
             cityCode = ""
             cityEnglish = NSMutableString()
             cityEnglish = ""
+            /*
             cityJapan = NSMutableString()
-            cityJapan = ""
+            cityJapan = ""*/
             cityKorean = NSMutableString()
             cityKorean = ""
         }
@@ -69,10 +106,10 @@ class ViewController_Airport: UIViewController, XMLParserDelegate {
         }
         if element.isEqual(to: ("cityEng")){
             cityEnglish.append(string)
-        }
+        }/*
         if element.isEqual(to: ("cityJpn")){
             cityJapan.append(string)
-        }
+        }*/
         if element.isEqual(to: ("cityKor")){
             cityKorean.append(string)
         }
@@ -87,13 +124,25 @@ class ViewController_Airport: UIViewController, XMLParserDelegate {
             if !cityEnglish.isEqual(nil){
                 elements.setObject(cityEnglish, forKey: "cityEng" as NSCopying)
             }
+            /*
             if !cityJapan.isEqual(nil){
                 elements.setObject(cityJapan, forKey: "cityJpn" as NSCopying)
-            }
+            }*/
             if !cityKorean.isEqual(nil){
                 elements.setObject(cityKorean, forKey: "cityKor" as NSCopying)
             }
-            posts.add(elements)
+            
+            let a = cityCode.range(of: SearchContent.text!)
+            let b = cityEnglish.range(of: SearchContent.text!)
+            let c = cityKorean.range(of: SearchContent.text!)
+            
+            
+            if(( a.length > 0) || ( b.length > 0) || ( c.length > 0) || (SearchContent.text == "")){
+                posts.add(elements)
+            }
+            
+            
+            
         }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
@@ -118,7 +167,9 @@ class ViewController_Airport: UIViewController, XMLParserDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        beginParsing()
+        pageManage()
+        
+       // beginParsing()
         // Do any additional setup after loading the view, typically from a nib.
     }
     

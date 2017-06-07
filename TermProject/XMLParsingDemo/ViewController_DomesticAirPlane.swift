@@ -61,7 +61,7 @@ class ViewController_DomesticAirPlane: UIViewController, XMLParserDelegate {
         parser = XMLParser(contentsOf:(NSURL(string:"http://openapi.airport.co.kr/service/rest/FlightScheduleList/getDflightScheduleList?serviceKey=Ky%2BwXkscu67T8fzT8JNNCSHphmixtovXBdUJq7mu6UpqCcZf7HLqA%2F8bjU%2FHijQ4Vi4zmtjF9Kp3LtjgUgHvTg%3D%3D&schFlightNum=KE1101"))! as URL)!
         
         
-        parser.delegate = self as! XMLParserDelegate
+        parser.delegate = self
         parser.parse()
         tbData!.reloadData()
     }
