@@ -118,10 +118,6 @@ class ViewController_InternationalAirPlane: UIViewController, XMLParserDelegate 
             
             airlineKorean.append(string)
             
-        }else if element.isEqual(to: "airlineKorean"){
-            
-            airlineKorean.append(string)
-            
         }else if element.isEqual(to: "airport"){
             
             airport.append(string)

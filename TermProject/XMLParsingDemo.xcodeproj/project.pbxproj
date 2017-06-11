@@ -10,15 +10,16 @@
 		A145024A1EDB35F10030CE34 /* ViewController_InternationalAirPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14502491EDB35F10030CE34 /* ViewController_InternationalAirPlane.swift */; };
 		A145024C1EDB48740030CE34 /* ViewController_FlightStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A145024B1EDB48740030CE34 /* ViewController_FlightStatus.swift */; };
 		A1957E881EC2FE7E002C3EDF /* ViewController_Airport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1957E871EC2FE7E002C3EDF /* ViewController_Airport.swift */; };
+		A1A621521EED2940009B7888 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A621511EED2940009B7888 /* Data.swift */; };
 		A1B978E01EAD917800E9BFCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B978DF1EAD917800E9BFCC /* AppDelegate.swift */; };
 		A1B978E21EAD917800E9BFCC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B978E11EAD917800E9BFCC /* ViewController.swift */; };
 		A1B978E51EAD917800E9BFCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1B978E31EAD917800E9BFCC /* Main.storyboard */; };
 		A1B978E71EAD917800E9BFCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B978E61EAD917800E9BFCC /* Assets.xcassets */; };
 		A1B978EA1EAD917800E9BFCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1B978E81EAD917800E9BFCC /* LaunchScreen.storyboard */; };
 		A1B978F31EAD9DE700E9BFCC /* ViewController_Daum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B978F11EAD9DE700E9BFCC /* ViewController_Daum.swift */; };
-		A1B978F41EAD9DE700E9BFCC /* ViewController_Korea.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B978F21EAD9DE700E9BFCC /* ViewController_Korea.swift */; };
 		A1B979181EB6020A00E9BFCC /* ViewController_DomesticAirPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B979171EB6020A00E9BFCC /* ViewController_DomesticAirPlane.swift */; };
-		A1CE56BA1EDB089100C07DF7 /* DomesticData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CE56B91EDB089100C07DF7 /* DomesticData.swift */; };
+		A1BCEB541EED374D0068C091 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BCEB531EED374D0068C091 /* SearchViewController.swift */; };
+		A1BCEB581EEDCDEF0068C091 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BCEB571EEDCDEF0068C091 /* TableViewController.swift */; };
 		A1CE56BC1EDB1BF400C07DF7 /* ViewController_Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CE56BB1EDB1BF400C07DF7 /* ViewController_Movie.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 		A14502491EDB35F10030CE34 /* ViewController_InternationalAirPlane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_InternationalAirPlane.swift; sourceTree = "<group>"; };
 		A145024B1EDB48740030CE34 /* ViewController_FlightStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_FlightStatus.swift; sourceTree = "<group>"; };
 		A1957E871EC2FE7E002C3EDF /* ViewController_Airport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_Airport.swift; sourceTree = "<group>"; };
+		A1A621511EED2940009B7888 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		A1B978DC1EAD917800E9BFCC /* XMLParsingDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XMLParsingDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1B978DF1EAD917800E9BFCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1B978E11EAD917800E9BFCC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -34,9 +36,9 @@
 		A1B978E91EAD917800E9BFCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1B978EB1EAD917800E9BFCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1B978F11EAD9DE700E9BFCC /* ViewController_Daum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_Daum.swift; sourceTree = "<group>"; };
-		A1B978F21EAD9DE700E9BFCC /* ViewController_Korea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_Korea.swift; sourceTree = "<group>"; };
 		A1B979171EB6020A00E9BFCC /* ViewController_DomesticAirPlane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_DomesticAirPlane.swift; sourceTree = "<group>"; };
-		A1CE56B91EDB089100C07DF7 /* DomesticData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DomesticData.swift; path = ../DomesticData.swift; sourceTree = "<group>"; };
+		A1BCEB531EED374D0068C091 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		A1BCEB571EEDCDEF0068C091 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		A1CE56BB1EDB1BF400C07DF7 /* ViewController_Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,11 +72,12 @@
 		A1B978DE1EAD917800E9BFCC /* XMLParsingDemo */ = {
 			isa = PBXGroup;
 			children = (
-				A1CE56B91EDB089100C07DF7 /* DomesticData.swift */,
+				A1BCEB571EEDCDEF0068C091 /* TableViewController.swift */,
+				A1A621511EED2940009B7888 /* Data.swift */,
 				A1957E871EC2FE7E002C3EDF /* ViewController_Airport.swift */,
 				A1B979171EB6020A00E9BFCC /* ViewController_DomesticAirPlane.swift */,
+				A14502491EDB35F10030CE34 /* ViewController_InternationalAirPlane.swift */,
 				A1B978F11EAD9DE700E9BFCC /* ViewController_Daum.swift */,
-				A1B978F21EAD9DE700E9BFCC /* ViewController_Korea.swift */,
 				A1B978DF1EAD917800E9BFCC /* AppDelegate.swift */,
 				A1B978E11EAD917800E9BFCC /* ViewController.swift */,
 				A1B978E31EAD917800E9BFCC /* Main.storyboard */,
@@ -82,8 +85,8 @@
 				A1B978E81EAD917800E9BFCC /* LaunchScreen.storyboard */,
 				A1B978EB1EAD917800E9BFCC /* Info.plist */,
 				A1CE56BB1EDB1BF400C07DF7 /* ViewController_Movie.swift */,
-				A14502491EDB35F10030CE34 /* ViewController_InternationalAirPlane.swift */,
 				A145024B1EDB48740030CE34 /* ViewController_FlightStatus.swift */,
+				A1BCEB531EED374D0068C091 /* SearchViewController.swift */,
 			);
 			path = XMLParsingDemo;
 			sourceTree = "<group>";
@@ -161,12 +164,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1BCEB541EED374D0068C091 /* SearchViewController.swift in Sources */,
 				A1B979181EB6020A00E9BFCC /* ViewController_DomesticAirPlane.swift in Sources */,
 				A1B978E21EAD917800E9BFCC /* ViewController.swift in Sources */,
 				A1957E881EC2FE7E002C3EDF /* ViewController_Airport.swift in Sources */,
-				A1B978F41EAD9DE700E9BFCC /* ViewController_Korea.swift in Sources */,
-				A1CE56BA1EDB089100C07DF7 /* DomesticData.swift in Sources */,
 				A145024C1EDB48740030CE34 /* ViewController_FlightStatus.swift in Sources */,
+				A1A621521EED2940009B7888 /* Data.swift in Sources */,
+				A1BCEB581EEDCDEF0068C091 /* TableViewController.swift in Sources */,
 				A1CE56BC1EDB1BF400C07DF7 /* ViewController_Movie.swift in Sources */,
 				A1B978F31EAD9DE700E9BFCC /* ViewController_Daum.swift in Sources */,
 				A145024A1EDB35F10030CE34 /* ViewController_InternationalAirPlane.swift in Sources */,

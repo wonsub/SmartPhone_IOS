@@ -48,7 +48,7 @@ class ViewController_Korea: UIViewController, XMLParserDelegate {
         }
     }
     
-    func parser(_ parser: XMLParser!, foundCharacters string: String!){
+    func parser(_ parser: XMLParser, foundCharacters string: String){
         if element.isEqual(to: "empNm"){
             title1.append(string)
         }else if element.isEqual(to: ("origNm")){

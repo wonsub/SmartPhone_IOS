@@ -1,4 +1,12 @@
 //
+//  TableViewController.swift
+//  XMLParsingDemo
+//
+//  Created by KPUGAME on 2017. 6. 12..
+//  Copyright © 2017년 WONSUB SHIN. All rights reserved.
+//
+
+//
 //  ViewController.swift
 //  XMLParsingDemo
 //
@@ -8,7 +16,7 @@
 
 import UIKit
 
-class ViewController_FlightStatus: UIViewController, XMLParserDelegate {
+class TableViewController: UITableViewController, XMLParserDelegate {
     
     var fromCity : String?
     var toCity : String?
@@ -60,7 +68,7 @@ class ViewController_FlightStatus: UIViewController, XMLParserDelegate {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         
-        if segue.identifier == "FlightInformation"{
+        if segue.identifier == "Test"{
             if let informationViewController = segue.destination as?
                 ViewController_DomesticAirPlane{
                 informationViewController.airline = "국제"
@@ -76,9 +84,9 @@ class ViewController_FlightStatus: UIViewController, XMLParserDelegate {
                 //posts.object(at: <#T##Int#>)
                 //(\(posts.object(at: indexPath.row) as AnyObject).value(forKey:"airFln") as! NSString as String
                 /*
-                flightStatusViewController.fromCity = deptText.text!
-                flightStatusViewController.toCity = arvText.text!
-                flightStatusViewController.airline = airlineText.text!
+                 flightStatusViewController.fromCity = deptText.text!
+                 flightStatusViewController.toCity = arvText.text!
+                 flightStatusViewController.airline = airlineText.text!
                  */
                 /*
                  if let statusViewController = segue.destination as? ViewController_FlightStatus{
@@ -89,7 +97,7 @@ class ViewController_FlightStatus: UIViewController, XMLParserDelegate {
             }
         }
     }
-
+    
     
     
     func beginParsing(){
@@ -154,15 +162,15 @@ class ViewController_FlightStatus: UIViewController, XMLParserDelegate {
     }
     
     
-
+    
     
     func parser(_ parser: XMLParser, foundCharacters string: String){
         
         /*if element.isEqual(to: "title"){
-            title1.append(string)
-        }else if element.isEqual(to: ("author")){
-            date.append(string)
-        }*/
+         title1.append(string)
+         }else if element.isEqual(to: ("author")){
+         date.append(string)
+         }*/
         
         if element.isEqual(to: "airlineKorean"){
             airlineKorean.append(string)
@@ -183,7 +191,7 @@ class ViewController_FlightStatus: UIViewController, XMLParserDelegate {
         }
         
         
- 
+        
     }
     
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?,qualifiedName qName: String?){
@@ -217,7 +225,7 @@ class ViewController_FlightStatus: UIViewController, XMLParserDelegate {
             }
             
             
-            
+            /*
             if (((airline != "") && (airlineKorean as String).range(of: airline!) != nil) || airline == "")
             {
                 if (((fromCity != "") && (boardingKor as String).range(of: fromCity!) != nil) || fromCity == "")
@@ -228,20 +236,19 @@ class ViewController_FlightStatus: UIViewController, XMLParserDelegate {
                     }
                 }
                 
-            }
+            }*/
+            posts.add(elements)
             
         }
     }
     
-    
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return posts.count
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {        return posts.count
     }
     
     
     
-    func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
         if(cell.isEqual(NSNull.self)){
             cell = Bundle.main.loadNibNamed("Cell", owner: self, options: nil)?[0] as! UITableViewCell;
@@ -258,11 +265,11 @@ class ViewController_FlightStatus: UIViewController, XMLParserDelegate {
             + "(" +
             ((posts.object (at: indexPath.row) as AnyObject).value(forKey: "etd") as! NSString as String) +
             ((posts.object (at: indexPath.row) as AnyObject).value(forKey: "rmkKor") as! NSString as String) +
-            ")"
+        ")"
         
         
-    
-      
+        
+        
         //fromCity = nil
         //toCity = nil
         //airline = nil
@@ -272,7 +279,7 @@ class ViewController_FlightStatus: UIViewController, XMLParserDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let indexPath = tableView.indexPathForSelectedRow!
         let currentCellValue = tableView.cellForRow(at: indexPath)! as UITableViewCell
-     //   print(currentCellValue.textLabel!.text)
+        //   print(currentCellValue.textLabel!.text)
         NSLog((currentCellValue.textLabel!.text)!)
     }
     
@@ -289,13 +296,6 @@ class ViewController_FlightStatus: UIViewController, XMLParserDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
  
-
-    
-
-    
-
-    
 }
-
