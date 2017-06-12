@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController_FlightStatus: UIViewController, XMLParserDelegate {
+class ViewController_FlightStatus: UITableViewController, XMLParserDelegate {
     
     var fromCity : String?
     var toCity : String?
@@ -61,31 +61,33 @@ class ViewController_FlightStatus: UIViewController, XMLParserDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         
         if segue.identifier == "FlightInformation"{
-            if let informationViewController = segue.destination as?
-                ViewController_DomesticAirPlane{
-                informationViewController.airline = "국제"
-                informationViewController.flightNum = "7G9611"
-                
-                
-                
-                //posts[tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)]
-                
-                
-                //data[indexPath.seletedRow]
-                
-                //posts.object(at: <#T##Int#>)
-                //(\(posts.object(at: indexPath.row) as AnyObject).value(forKey:"airFln") as! NSString as String
-                /*
-                flightStatusViewController.fromCity = deptText.text!
-                flightStatusViewController.toCity = arvText.text!
-                flightStatusViewController.airline = airlineText.text!
-                 */
-                /*
-                 if let statusViewController = segue.destination as? ViewController_FlightStatus{
-                 statusViewController.data = Data(deptCity: "Test",arvCity: "arv")
-                 //statusViewController.data
-                 }*/
-                
+            if let cell = sender as? UITableViewCell {
+                let indexPath = tableView.indexPath(for: cell)
+                if let informationViewController = segue.destination as?
+                    ViewController_DomesticAirPlane{
+                    informationViewController.airline = (posts.object(at:(indexPath?.row)!)as AnyObject).value(forKey: "line") as! NSString as String
+                    informationViewController.flightNum = (posts.object(at:(indexPath?.row)!)as AnyObject).value(forKey: "airFln") as! NSString as String
+                    
+                    
+                    
+                    //posts[tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)]
+                    
+                    
+                    //data[indexPath.seletedRow]
+                    
+                    //posts.object(at: <#T##Int#>)
+                    //(\(posts.object(at: indexPath.row) as AnyObject).value(forKey:"airFln") as! NSString as String
+                    /*
+                     flightStatusViewController.fromCity = deptText.text!
+                     flightStatusViewController.toCity = arvText.text!
+                     flightStatusViewController.airline = airlineText.text!
+                     */
+                    /*
+                     if let statusViewController = segue.destination as? ViewController_FlightStatus{
+                     statusViewController.data = Data(deptCity: "Test",arvCity: "arv")
+                     //statusViewController.data
+                     }*/
+                }
             }
         }
     }
@@ -235,13 +237,13 @@ class ViewController_FlightStatus: UIViewController, XMLParserDelegate {
     
     
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return posts.count
     }
     
     
     
-    func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         var cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
         if(cell.isEqual(NSNull.self)){
             cell = Bundle.main.loadNibNamed("Cell", owner: self, options: nil)?[0] as! UITableViewCell;
@@ -266,7 +268,7 @@ class ViewController_FlightStatus: UIViewController, XMLParserDelegate {
         //fromCity = nil
         //toCity = nil
         //airline = nil
-        return cell as UITableViewCell
+        return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

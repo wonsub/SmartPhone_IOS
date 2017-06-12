@@ -316,9 +316,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="Ms1-66-FaB" kind="presentation" identifier="Test" id="9cE-yv-97z"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -561,7 +558,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZXl-1d-DOo" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="359" y="1459"/>
+            <point key="canvasLocation" x="-425" y="2252"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rbW-3A-kwT">
@@ -574,10 +571,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eSk-BQ-bTF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="896" y="785"/>
+            <point key="canvasLocation" x="372" y="1459"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="9cE-yv-97z"/>
-    </inferredMetricsTieBreakers>
 </document>
