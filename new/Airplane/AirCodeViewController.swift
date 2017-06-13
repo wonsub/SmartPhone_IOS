@@ -143,6 +143,10 @@ class AirCodeViewController: UIViewController, XMLParserDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        searchContent.resignFirstResponder()
+    }
+    
 
     /*
     // MARK: - Navigation

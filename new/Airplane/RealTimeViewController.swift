@@ -24,6 +24,12 @@ class RealTimeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        startText.resignFirstResponder()
+        deptText.resignFirstResponder()
+        flightText.resignFirstResponder()
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
