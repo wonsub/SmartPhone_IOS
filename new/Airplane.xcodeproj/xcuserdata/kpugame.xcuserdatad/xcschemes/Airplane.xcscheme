@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A1B978DB1EAD917800E9BFCC"
-               BuildableName = "XMLParsingDemo.app"
-               BlueprintName = "XMLParsingDemo"
-               ReferencedContainer = "container:XMLParsingDemo.xcodeproj">
+               BlueprintIdentifier = "7702EA831EEFF02100D0A69B"
+               BuildableName = "Airplane.app"
+               BlueprintName = "Airplane"
+               ReferencedContainer = "container:Airplane.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A1B978DB1EAD917800E9BFCC"
-            BuildableName = "XMLParsingDemo.app"
-            BlueprintName = "XMLParsingDemo"
-            ReferencedContainer = "container:XMLParsingDemo.xcodeproj">
+            BlueprintIdentifier = "7702EA831EEFF02100D0A69B"
+            BuildableName = "Airplane.app"
+            BlueprintName = "Airplane"
+            ReferencedContainer = "container:Airplane.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A1B978DB1EAD917800E9BFCC"
-            BuildableName = "XMLParsingDemo.app"
-            BlueprintName = "XMLParsingDemo"
-            ReferencedContainer = "container:XMLParsingDemo.xcodeproj">
+            BlueprintIdentifier = "7702EA831EEFF02100D0A69B"
+            BuildableName = "Airplane.app"
+            BlueprintName = "Airplane"
+            ReferencedContainer = "container:Airplane.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A1B978DB1EAD917800E9BFCC"
-            BuildableName = "XMLParsingDemo.app"
-            BlueprintName = "XMLParsingDemo"
-            ReferencedContainer = "container:XMLParsingDemo.xcodeproj">
+            BlueprintIdentifier = "7702EA831EEFF02100D0A69B"
+            BuildableName = "Airplane.app"
+            BlueprintName = "Airplane"
+            ReferencedContainer = "container:Airplane.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
